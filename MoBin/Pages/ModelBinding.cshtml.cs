@@ -17,10 +17,18 @@ namespace MoBin.Pages
             _logger = logger;
         }
 
+        public class Login
+        {
+            public string Email { get; set; }
+            public string Password { get; set; }
+        }
         [BindProperty]
-        public string Name { get; set; }
-        [BindProperty]
-        public string Email { get; set; }
+        public Login login { get; set; }
+
+        // [BindProperty]
+        // public string Name { get; set; }
+        // [BindProperty]
+        // public string Email { get; set; }
 
         public void OnGet()
         {

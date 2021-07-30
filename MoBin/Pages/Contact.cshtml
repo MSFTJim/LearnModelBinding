@@ -1,0 +1,50 @@
+@page
+@model ContactModel
+@{
+}
+
+<h3>@ViewData["confirmation"]</h3>
+
+<form class="form-horizontal" method="post">
+    <table class="table table-striped">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+
+        @for (var i = 0; i < 2; i++)
+        {
+            <tr>
+                <td>
+                    <input type="text" asp-for="Contacts[i].FirstName" />
+                </td>
+                <td>
+                    <input type="text" asp-for="Contacts[i].LastName" />
+                </td>
+                <td>
+                    <input type="text" asp-for="Contacts[i].Email" />
+                </td>
+            </tr>
+        }
+        @* @for (var i = 0; i < 5; i++)
+            {
+            <tr>
+            <td>
+            <input type="text" name="Contacts[@i].FirstName" />
+            </td>
+            <td>
+            <input type="text" name="Contacts[@i].LastName" />
+            </td>
+            <td>
+            <input type="text" name="Contacts[@i].Email" />
+            </td>
+            </tr>
+            } *@
+    </table>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
