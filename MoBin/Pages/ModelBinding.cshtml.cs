@@ -10,9 +10,9 @@ namespace MoBin.Pages
 {
     public class ModelBindingModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<ModelBindingModel> _logger;
 
-        public ModelBindingModel(ILogger<IndexModel> logger)
+        public ModelBindingModel(ILogger<ModelBindingModel> logger)
         {
             _logger = logger;
         }

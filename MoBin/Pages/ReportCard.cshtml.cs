@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 
 namespace MoBin.Pages
 {
-    public class ReportModel : PageModel
+    public class ReportCardModel : PageModel
     {
-        private readonly ILogger<ReportModel> _logger;
+        private readonly ILogger<ReportCardModel> _logger;
 
-        public ReportModel(ILogger<ReportModel> logger)
+        public ReportCardModel(ILogger<ReportCardModel> logger)
         {
             _logger = logger;
         }

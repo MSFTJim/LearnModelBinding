@@ -10,9 +10,9 @@ namespace MoBin.Pages
 {
     public class FilmModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<FilmModel> _logger;
 
-        public FilmModel(ILogger<IndexModel> logger)
+        public FilmModel(ILogger<FilmModel> logger)
         {
             _logger = logger;
         }

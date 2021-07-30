@@ -1,0 +1,73 @@
+@page
+@model ReportCardModel
+@{
+}
+
+<h3>@ViewData["Pretty Report Page"]</h3>
+
+<style>
+    table.outside-table {
+        border: 0px solid black;
+        margin-left: auto;
+        margin-right: auto;
+        border-spacing: 30px;
+        border-collapse: separate;
+    }
+    table.report-column {
+        border: 1px solid black;
+        margin-left: auto;
+        margin-right: auto;
+        border-spacing: 30px;
+        border-collapse: separate;
+    }
+</style>
+
+
+
+             
+                @* <td>
+                    <input type="checkbox" asp-for="SelectedReports[i].IsSelected" />
+                </td>
+                <td>
+                    <input type="text"  asp-for="SelectedReports[i].Id" />
+                </td>
+                <td>
+                    <input type="text" asp-for="SelectedReports[i].Name" />
+                </td>
+                <td>
+                    <input type="text" asp-for="SelectedReports[i].IsHidden" />
+                </td>
+                <td>
+                    <input type="checkbox" asp-for="SelectedReports[i].HasParm" />
+                </td> *@
+    
+      
+    
+<div class="card justify-content-center" style="width: 50rem">
+    <div class="card-header">
+        Reports
+    </div>
+    <div class="card-body" style="margin-right: 18%; margin-left: 18%">
+    <form method="post">
+        @for (var i = 0; i < (@Model.ReportCount); i++)
+        {
+             <input type="checkbox" asp-for="SelectedReports[i].IsSelected" />
+             <label for="SelectedReports[i].IsSelected">@Model.SelectedReports[i].Name</label> 
+             @* asp-for="SelectedReports[i].Name" /> *@
+             <input type="hidden" asp-for="SelectedReports[i].Name" />
+             <input type="hidden" asp-for="SelectedReports[i].IsHidden" />
+             <input type="hidden" asp-for="SelectedReports[i].HasParm" />
+             <input type="hidden" asp-for="SelectedReports[i].Id" />
+             <br>
+
+            @* <input name="ReportsToRun" type="checkbox" value="@Model.SelectedReports[i].Name" />
+            @Model.SelectedReports[i].Name <br /> *@
+        }
+        <br>
+        <br>
+        <div style="text-align: center">
+            <button>Run Reports</button>
+        </div>
+    </form>
+    </div>
+</div>
