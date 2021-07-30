@@ -1,0 +1,58 @@
+@page
+@model ReportModel
+@{
+}
+
+<h3>@ViewData["confirmation"]</h3>
+
+<form class="form-horizontal" method="post">
+    <table class="table table-striped">
+        <tr>
+            <th>IsSelected</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Hidden</th>
+            <th>Parm</th>
+        </tr>
+
+        @for (var i = 0; i < @Model.ReportCount; i++)
+        {
+            <tr>                
+                <td>
+                    <input type="checkbox" asp-for="SelectedReports[i].IsSelected" />
+                </td>
+                <td>
+                    <input type="text"  asp-for="SelectedReports[i].Id" />
+                </td>
+                <td>
+                    <input type="text" asp-for="SelectedReports[i].Name" />
+                </td>
+                <td>
+                    <input type="text" asp-for="SelectedReports[i].IsHidden" />
+                </td>
+                <td>
+                    <input type="checkbox" asp-for="SelectedReports[i].HasParm" />
+                </td>
+            </tr>
+        }
+        @* @for (var i = 0; i < 5; i++)
+            {
+            <tr>
+            <td>
+            <input type="text" name="Contacts[@i].FirstName" />
+            </td>
+            <td>
+            <input type="text" name="Contacts[@i].LastName" />
+            </td>
+            <td>
+            <input type="text" name="Contacts[@i].Email" />
+            </td>
+            </tr>
+            } *@
+    </table>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
